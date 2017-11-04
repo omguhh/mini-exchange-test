@@ -8,12 +8,77 @@
     <meta name="description" content="Frontend Test">
     <meta name="author" content="Yasmine Fadel">
 
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="build/main.css">
 
 </head>
 
 <body>
-<p> Hello! </p>
-<script src="js/scripts.js"></script>
+<nav class="navigation__wrapper">
+    <ul>
+        <li class="navigation__link"> Dog </li>
+        <li class="navigation__link"> Cat </li>
+        <li class="navigation__link"> Small pet </li>
+        <li class="navigation__link"> Bird </li>
+        <li class="navigation__link"> Aquatic </li>
+        <li class="navigation__link"> <i class="fontawesome fontawesome-plus" aria-hidden="true"></i> Vet </li>
+        <li class="navigation__link"> <i class="fontawesome fontawesome-star" aria-hidden="true"></i> Exclusives  </li>
+        <li class="navigation__link"> Top brands </li>
+        <li class="navigation__link">  <i class="fontawesome fontawesome-tag" aria-hidden="true"></i> Special offers </li>
+    </ul>
+</nav>
+
+<section>
+    <div class="breadcrumb">
+        <p> You are here: Home > Login </p>
+    </div>
+</section>
+<div class="row">
+    <section class="col-6 card">
+        <h3 class="heavy"> Returning Customer </h3>
+        <h3> Sign in to speed up the checkout process </h3>
+        <div class="field__wrapper">
+            <label class="field__label">Email Address*</label>
+            <input type="text" class="field__input" placeholder="Email Address">
+        </div>
+        <div class="field__wrapper">
+            <label class="field__label"> Password* </label>
+            <input type="text" class="field__input" placeholder="Password">
+        </div>
+
+        <div class="col-12">
+            <a href="#"> Forgot your password? </a>
+        </div>
+        <div class="col-6">
+            <input type="button" value="Sign in"  class="button button--sign-in">
+        </div>
+        <div class="col-6">
+            <a href="#"> Load data from JSON </a>
+        </div>
+    </section>
+
+    <section class="col-6 card card--colored">
+        <h3 class="heavy"> New Customers </h3>
+        <button class="button button--register"> Register </button>
+        <h3> Register now and enjoy the advantages of a new account! </h3>
+        <p>  <i class="fontawesome fontawesome-ok" aria-hidden="true"></i>  loyalty points & get rewards </p>
+        <p>  <i class="fontawesome fontawesome-ok" aria-hidden="true"></i> easy recording without information re-entry </p>
+    </section>
+
+    <section  class="col-6 card card--colored">
+        <h3 class="heavy">Express Checkout without Registration</h3>
+        <p> You can shop here without registering for a customer account.</p>
+        <button  class="button button--express-checkout"> Proceed without Registering </button>
+        <p> Some automatically applied coupons may not apply with express checkout. </p>
+    </section>
+
+</div>
+
+<footer>
+
+</footer>
+
+<p> * Required fields </p>
+
+<script src="js/test.js"></script>
 </body>
 </html>

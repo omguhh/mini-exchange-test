@@ -1,0 +1,17 @@
+.button {
+  border: none;
+  padding: 10px;
+  color: #ffffff;
+  .border-radius(25px);
+  .box-shadow(2px 4px 5px 0px rgba(0, 0, 0, 0.34));
+  &--sign-in {
+    .gradient(@gray-gradient-top, @gray-gradient-mid, @gray-gradient-bottom);
+  }
+  &--register {
+    padding: 10px 30px;
+    .gradient(@orange-gradient-top, @orange-gradient-mid, @orange-gradient-bottom);
+  }
+  &--express-checkout {
+    background-color: @primary-color;
+  }
+}

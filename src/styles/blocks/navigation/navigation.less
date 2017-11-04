@@ -1,0 +1,29 @@
+.navigation {
+  &__wrapper {
+    height: 40px;
+    .gradient(@green-gradient-top, @green-gradient-mid, @green-gradient-bottom);
+  }
+  &__link {
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    width: 10%;
+    padding: 10px 0;
+    text-align: center;
+    &:after {
+      content: '';
+      height: 16px;
+      width: 1px;
+      display: inline-block;
+      background-color: #fff;
+      position: relative;
+      vertical-align: middle;
+      margin-left: 50px;
+    }
+    &:last-child {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

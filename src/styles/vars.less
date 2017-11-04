@@ -1,0 +1,54 @@
+// Color definitions
+
+@primary-color: #3c9700;
+@secondary-color: #ff8800;
+@light-gray: #cccccc;
+@background-gray: #eeeeee;
+
+@green-gradient-top: #66b100;
+@green-gradient-mid: #338800;
+@green-gradient-bottom: #56a100;
+
+@orange-gradient-top: #ff8800;
+@orange-gradient-mid: #dd7700;
+@orange-gradient-bottom: #fd8600;
+
+@gray-gradient-top: #e6e6e6;
+@gray-gradient-mid: @light-gray;
+@gray-gradient-bottom: #aaaaaa;
+
+//Font definitions
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('http://weloveiconfonts.com/api/?family=fontawesome');
+
+@font-family: Roboto;
+@font-awesome: 'FontAwesome';
+
+.fontawesome {
+  font-family: @font-awesome;
+}
+
+//Some mixins
+
+.gradient (@startColor: #eee, @midColor: red,  @endColor: white) {
+  background: @startColor; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, @startColor, @midColor, @endColor); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, @startColor,@midColor,  @endColor); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.border-radius (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  background-clip:         padding-box;
+}
+
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow:    @string;
+  box-shadow:         @string;
+}
