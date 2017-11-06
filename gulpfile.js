@@ -5,12 +5,12 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
-var autoprefixer = require('autoprefixer');
+var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 
 var scriptsTask = function () {
     return gulp.src('./src/scripts/*.js')
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest('./build'));
 };
 
@@ -23,7 +23,7 @@ var stylesTask = function() {
 };
 
 var watchTask = function () {
-    gulp.watch('./src/styles/**/*.less', ['less']);
+    gulp.watch('./src/styles/**/*.less', ['styles']);
     gulp.watch('./src/scripts/*.js', ['scripts']);
 };
 
