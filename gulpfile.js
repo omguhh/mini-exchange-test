@@ -6,7 +6,7 @@ var uglify = require('gulp-uglify');
 
 var scriptsTask = function () {
     return gulp.src('./src/scripts/*.js')
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('./build'));
 };
 
