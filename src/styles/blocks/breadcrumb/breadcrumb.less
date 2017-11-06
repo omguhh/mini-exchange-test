@@ -1,6 +1,6 @@
 .breadcrumb {
   &__container {
-
+    padding-top: 10px;
   }
   &__item {
     display: inline-block;
@@ -15,5 +15,28 @@
       width: 0;
       display: none;
     }
+  }
+  &__arrow {
+    vertical-align: text-top;
+    text-decoration: none;
+    display: none;
+    &:after {
+      content:"\f078";
+      font-family: @font-awesome;
+      position: relative;
+      display: inline-block;
+    }
+    &--active {
+      display: inline-block;
+    }
+    &.toggle-open {
+      &:after {
+        content:"\f077";
+        font-family: @font-awesome;
+        position: relative;
+        display: inline-block;
+      }
+    }
+
   }
 }
