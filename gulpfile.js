@@ -1,7 +1,3 @@
-/**
- * Created by yasmine on 11/3/2017.
- */
-
 var gulp = require('gulp');
 var less = require('gulp-less');
 var minifyCss = require('gulp-minify-css');
