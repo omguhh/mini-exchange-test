@@ -1,0 +1,37 @@
+@media only screen and (max-width: @breakpoint-small) {
+  .navigation {
+    &__link {
+      display: block;
+      width: 82%;
+      color: #999;
+      text-align: left;
+      padding: 20px;
+      border-bottom: 1px solid #eeeeee;
+      &:after {
+        content: none;
+      }
+      a {
+        color: @primary-color;
+      }
+    }
+    &__items {
+      transform: translate(-100%, 0);
+      .transition(all 0.2s ease-in-out 0s);
+      &--active {
+        transform: translate(0);
+        position: absolute;
+        left: 0;
+        top: 40px;
+        width: 55%;
+        background: #ffffff;
+        z-index: 50;
+        height: 100%;
+        border-right: 1px solid #eeeeee;
+        .transition(all 0.2s ease-in-out 0s);
+      }
+    }
+    &__hamburger {
+      display: block;
+    }
+  }
+}
