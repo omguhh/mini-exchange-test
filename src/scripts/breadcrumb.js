@@ -2,71 +2,73 @@
  * Created by yasmi on 11/4/2017.
  */
 
-function toggleArrow() {
+'use strict';
 
-}
+var breadcrumbs = {
 
-// function shouldHideElement() {
-//     //check if its moved to the next line
-//     //if it has, hide the first breadcrumb link
-//     var breadcrumbs = document.getElementsByClassName("breadcrumb__item");
-//     var nothiddenCrumbs = document.querySelectorAll(".breadcrumb__item:not(.hidden)");
-//     var hiddenCrumbs = document.querySelectorAll(".breadcrumb__item--hidden");
-//     var productCrumb = document.getElementsByClassName("breadcrumb__item--upload")[0];
-//     var breadcrumbContainer = document.getElementsByClassName("breadcrumb__container")[0].offsetWidth - 50;
-//     var breadCrumbWidth = 0;
-//     var counter=0;
-//     //get total width of all elements together
-//     for (var i = 0; i < breadcrumbs.length; i++) {
-//         breadCrumbWidth += breadcrumbs[i].offsetWidth;
-//     }
-//
-//     do {
-//         breadCrumbWidth -= nothiddenCrumbs[counter].offsetWidth;
-//         nothiddenCrumbs[counter].classList.add('breadcrumb__item--hidden');
-//         nothiddenCrumbs = document.querySelectorAll(".breadcrumb__item:not(.hidden)");
-//         counter++;
-//     } while (breadCrumbWidth > breadcrumbContainer && counter < nothiddenCrumbs.length);
-//
-//     do {
-//             breadCrumbWidth += hiddenCrumbs[counter].offsetWidth;
-//             hiddenCrumbs[counter].classList.remove('breadcrumb__item--hidden');
-//             hiddenCrumbs = document.querySelectorAll(".breadcrumb__item--hidden");
-//             counter++;
-//
-//     } while (breadCrumbWidth < breadcrumbContainer && counter < hiddenCrumbs.length);
-//
-// }
+    elements: {
+         breadcrumbContainer : $('.breadcrumb__container').width() - 100,
+         breadcrumbItems: $('.breadcrumb__item'),
+         breadCrumbItemHidden : $($('.breadcrumb__item--hidden').get().reverse()),
+         breadcrumbArrow : $('.breadcrumb__arrow'),
+         totalWidth : 0
+    },
 
+    init: function() {
+        this.totalBreadcrumbWidth();
+        this.shouldHideBreadcrumbs();
+    },
 
-function shouldHideElement() {
-    var breadcrumbContainer = $('.breadcrumb__container');
-    var breadcrumbItems = $('.breadcrumb__item');
-    var totalWidth = 0;
+    forceShowBreadcrumbs: function() {
+        this.elements.breadcrumbArrow.addClass('toggle-open');
+        this.elements.breadcrumbItems.each(function(key,value) {
+            $(value).removeClass('breadcrumb__item--hidden');
+        });
+    },
 
-    breadcrumbItems.each(function() {
-         totalWidth += $(this).width();
-    });
-    breadcrumbItems.each(function() {
-        if(totalWidth > breadcrumbContainer.width() ) {
-            if(!$(this).hasClass('breadcrumb__item--hidden')) {
-                $(this).addClass('breadcrumb__item--hidden');
-                totalWidth = $(this).width();
-            }
-        } else if(totalWidth < breadcrumbContainer.width()) {
-            $(this).removeClass('breadcrumb__item--hidden');
-            totalWidth +=  $(this).width();
+    totalBreadcrumbWidth: function() {
+        var width = 0;
+        this.elements.breadcrumbItems.each(function(key,value) {
+             width += $(value).width();
+        });
+        return this.elements.totalWidth = width;
+    },
+
+    isFullBreadcrumbShowing: function() {
+        if(this.elements.breadCrumbItemHidden.length === 0) {
+            this.elements.breadcrumbArrow.addClass('toggle-open');
         }
-    });
+    },
 
-}
-function hideOrShowBreadcrumbs(breadcrumb) {
+    shouldHideBreadcrumbs: function () {
+        if(this.elements.totalWidth > this.elements.breadcrumbContainer ) {
+            this.elements.breadcrumbArrow.addClass('breadcrumb__arrow--active').removeClass('toggle-open');
+            $('.breadcrumb__item:not(.breadcrumb__item--hidden)').each(function (key,item) {
+                if (!$(item).hasClass('breadcrumb__item--upload')) {
+                    $(item).addClass('breadcrumb__item--hidden');
+                    breadcrumbs.elements.totalWidth -= $(item).width();
+                    return false;
+                }
+            });
+        } else {
+            $($('.breadcrumb__item--hidden').get().reverse()).each(function (key,item) {
+                $(item).removeClass('breadcrumb__item--hidden');
+                breadcrumbs.elements.totalWidth += $(item).width();
+                return false;
+            });
+        }
+    }
 
-}
+};
 
-window.addEventListener('resize', function(){
-    shouldHideElement();
+$( document ).ready(function() {
+    breadcrumbs.init();
+});
+$( window ).resize(function() {
+    breadcrumbs.init();
 });
 
-
+$('.breadcrumb__arrow').on('click', function() {
+    return $(this).hasClass('toggle-open') ? breadcrumbs.init() : breadcrumbs.forceShowBreadcrumbs();
+});
 
