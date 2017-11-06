@@ -1,0 +1,19 @@
+.breadcrumb {
+  &__container {
+
+  }
+  &__item {
+    display: inline-block;
+    overflow: hidden;
+    .transition(all 0.2s ease-in-out 0s);
+    &--upload {
+      a {
+        color: @secondary-color;
+      }
+    }
+    &--hidden {
+      width: 0;
+      display: none;
+    }
+  }
+}

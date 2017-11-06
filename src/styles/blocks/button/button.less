@@ -4,14 +4,22 @@
   color: #ffffff;
   .border-radius(25px);
   .box-shadow(2px 4px 5px 0px rgba(0, 0, 0, 0.34));
+  .transition(all 0.2s ease-in-out 0s);
+  cursor: pointer;
   &--sign-in {
     .gradient(@gray-gradient-top, @gray-gradient-mid, @gray-gradient-bottom);
   }
   &--register {
     padding: 10px 30px;
     .gradient(@orange-gradient-top, @orange-gradient-mid, @orange-gradient-bottom);
+    margin: 20px 0 50px 0;
   }
   &--express-checkout {
     background-color: @primary-color;
+    margin: 20px 0;
+  }
+  &:hover {
+    .transition(all 0.2s ease-in-out 0s);
+    transform: translateY(-1px);
   }
 }

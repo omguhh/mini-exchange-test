@@ -1,11 +1,13 @@
-.navigation {
+.footer {
   &__wrapper {
     height: 40px;
-    .gradient(@green-gradient-top, @green-gradient-mid, @green-gradient-bottom);
+    background-color: @primary-color;
+    text-align: center;
   }
   &__link {
+    color: #ffffff;
+    text-decoration: none;
     display: inline-block;
-    width: 10%;
     padding: 10px 0;
     text-align: center;
     &:after {
@@ -16,20 +18,12 @@
       background-color: #fff;
       position: relative;
       vertical-align: middle;
-      margin-left: 50px;
+      margin: 0 20px;
     }
     &:last-child {
       &:after {
         content: none;
       }
-    }
-    &:hover {
-      .transition(all 0.2s ease-in-out 0s);
-      transform: translateY(-1px);
-    }
-    a {
-      color: #ffffff;
-      text-decoration: none;
     }
   }
 }

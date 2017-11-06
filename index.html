@@ -16,70 +16,99 @@
 <body>
 <nav class="navigation__wrapper">
     <ul>
-        <li class="navigation__link"> Dog </li>
-        <li class="navigation__link"> Cat </li>
-        <li class="navigation__link"> Small pet </li>
-        <li class="navigation__link"> Bird </li>
-        <li class="navigation__link"> Aquatic </li>
-        <li class="navigation__link"> <i class="fontawesome fontawesome-plus" aria-hidden="true"></i> Vet </li>
-        <li class="navigation__link"> <i class="fontawesome fontawesome-star" aria-hidden="true"></i> Exclusives  </li>
-        <li class="navigation__link"> Top brands </li>
-        <li class="navigation__link">  <i class="fontawesome fontawesome-tag" aria-hidden="true"></i> Special offers </li>
+        <li class="navigation__link">  <a href="#"> Dog </a> </li>
+        <li class="navigation__link">  <a href="#"> Cat  </a> </li>
+        <li class="navigation__link">  <a href="#"> Small pet </a> </li>
+        <li class="navigation__link">  <a href="#">  Bird  </a> </li>
+        <li class="navigation__link">  <a href="#"> Aquatic </a> </li>
+        <li class="navigation__link">  <a href="#"> <i class="fontawesome fontawesome-plus" aria-hidden="true"></i> Vet  </a> </li>
+        <li class="navigation__link">  <a href="#"> <i class="fontawesome fontawesome-star" aria-hidden="true"></i> Exclusives  </a> </li>
+        <li class="navigation__link">  <a href="#"> Top brands  </a> </li>
+        <li class="navigation__link">  <a href="#">  <i class="fontawesome fontawesome-tag" aria-hidden="true"></i> Special offers   </a> </li>
     </ul>
 </nav>
 
-<section>
-    <div class="breadcrumb">
-        <p> You are here: Home > Login </p>
-    </div>
-</section>
-<div class="row">
-    <section class="col-6 card">
-        <h3 class="heavy"> Returning Customer </h3>
-        <h3> Sign in to speed up the checkout process </h3>
-        <div class="field__wrapper">
-            <label class="field__label">Email Address*</label>
-            <input type="text" class="field__input" placeholder="Email Address">
-        </div>
-        <div class="field__wrapper">
-            <label class="field__label"> Password* </label>
-            <input type="text" class="field__input" placeholder="Password">
-        </div>
-
+<div class="container">
+    <div class="row">
         <div class="col-12">
-            <a href="#"> Forgot your password? </a>
-        </div>
-        <div class="col-6">
-            <input type="button" value="Sign in"  class="button button--sign-in">
-        </div>
-        <div class="col-6">
-            <a href="#"> Load data from JSON </a>
-        </div>
-    </section>
+            <div class="breadcrumb">
+                <ol class="breadcrumb__container">
+                    <li class="breadcrumb__item"> <a href="#"> Home > </a></li>
+                    <li class="breadcrumb__item"> <a href="#"> Small Pet > </a></li>
+                    <li class="breadcrumb__item"> <a href="#"> Small Pet Food > </a></li>
+                    <li class="breadcrumb__item"> <a href="#"> Hamster Food > </a></li>
+                    <li class="breadcrumb__item breadcrumb__item--upload"> <a href="#"> Versele Laga Premimum Mini Hamster Nature > </a></li>
+                    <li class="breadcrumb__item breadcrumb__item--upload" id="upload-link"> <a href="#"> Upload Photo </a></li>
 
-    <section class="col-6 card card--colored">
-        <h3 class="heavy"> New Customers </h3>
-        <button class="button button--register"> Register </button>
-        <h3> Register now and enjoy the advantages of a new account! </h3>
-        <p>  <i class="fontawesome fontawesome-ok" aria-hidden="true"></i>  loyalty points & get rewards </p>
-        <p>  <i class="fontawesome fontawesome-ok" aria-hidden="true"></i> easy recording without information re-entry </p>
-    </section>
+                </ol>
+            </div>
+        </div>
+        <section class="col-6">
+            <div class="card">
+                <h3 class="heavy"> Returning Customer </h3>
+                <h3> Sign in to speed up the checkout process </h3>
+                <div class="field__wrapper">
+                    <label class="field__label">Email Address*</label>
+                    <input type="text" class="field__input" placeholder="Email Address"  required>
+                </div>
+                <div class="field__wrapper">
+                    <label class="field__label"> Password* </label>
+                    <input type="text" class="field__input" placeholder="Password" required>
+                </div>
 
-    <section  class="col-6 card card--colored">
-        <h3 class="heavy">Express Checkout without Registration</h3>
-        <p> You can shop here without registering for a customer account.</p>
-        <button  class="button button--express-checkout"> Proceed without Registering </button>
-        <p> Some automatically applied coupons may not apply with express checkout. </p>
-    </section>
+                <div class="col-12">
+                    <a href="#"> Forgot your password? </a>
+                </div>
+                <div class="col-6">
+                    <input type="button" value="Sign in"  class="button button--sign-in">
+                </div>
+                <div class="col-6 right-align">
+                    <a href="#"> Load data from JSON </a>
+                </div>
+            </div>
+        </section>
 
+        <section class="col-6">
+            <div class="card card--colored">
+                <h3 class="heavy"> New Customers </h3>
+                <button class="button button--register"> Register </button>
+                <h3> Register now and enjoy the advantages of a new account! </h3>
+                <p>  <i class="fontawesome fontawesome-ok label--green" aria-hidden="true"></i>  loyalty points & get rewards </p>
+                <p>  <i class="fontawesome fontawesome-ok label--green" aria-hidden="true"></i> easy recording without information re-entry </p>
+            </div>
+        </section>
+
+        <section  class="col-6">
+            <div class="card card--colored">
+                <h3 class="heavy">Express Checkout without Registration</h3>
+                <p> You can shop here without registering for a customer account.</p>
+                <button  class="button button--express-checkout"> Proceed without Registering </button>
+                <p> Some automatically applied coupons may not apply with express checkout. </p>
+            </div>
+        </section>
+    </div>
+    <p> * Required fields </p>
 </div>
 
-<footer>
-
+<div class="row">
+<footer class="footer__wrapper">
+    <ul>
+        <li class="footer__link"> About Us </li>
+        <li class="footer__link"> Press </li>
+        <li class="footer__link"> Jobs </li>
+        <li class="footer__link"> Imprint </li>
+        <li class="footer__link"> Data Security </li>
+        <li class="footer__link"> Environment Regulations </li>
+        <li class="footer__link"> Sitemap </li>
+        <li class="footer__link"> Partner Program </li>
+        <li class="footer__link"> Investor relations </li>
+    </ul>
 </footer>
+    <small> © 1999-2015 </small>
+</div>
 
-<p> * Required fields </p>
 
-<script src="js/test.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="build/breadcrumb.js" type="text/javascript"></script>
 </body>
 </html>
